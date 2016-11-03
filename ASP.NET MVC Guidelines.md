@@ -15,3 +15,12 @@ To define Views in ASP.NET MVC it's used a templating language called Razor, thi
 
 ##Authentication##
 Use Custom Authentication, with the use of FormsAuthentication that sets a cookie
+
+##Deploy to a Windows Web Server##
+
+####Using Web Deploy####
+
+####Files and Folders Exclusions####
+
+####Pages loading slowly?####
+That's due to the Roslyn compiler.
