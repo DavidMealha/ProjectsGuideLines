@@ -48,10 +48,8 @@ To iterate over an array of information, use the map method, where it's possible
 ```javascript
 this.state.courses.map(function(course) {
 	return (<tr key={course.id} >
-			<td>{course.name}</td>
-                      	<td>
-                        	<Link to={'/Courses/CourseDetails/' + course.id } className="link-details">See Details</Link>
-                      	</td>
+		<td>{course.name}</td>
+		<td><Link to={'/Courses/CourseDetails/' + course.id } className="link-details">See Details</Link></td>
 		</tr>);
 }
 ```
