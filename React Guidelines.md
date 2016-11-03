@@ -1,7 +1,9 @@
 #React Guidelines#
 
 ##Object Instanciation/Creation##
-var reactComponentName = react.CreateClass();
+```javascript
+var reactComponentName = react.createClass();
+```
 
 ##Components Properties and State##
 Each component can have a set of props and a state.
