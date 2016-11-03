@@ -39,8 +39,8 @@ React component have 4 different cycles, depending on what's happening to the co
 When manipulating dynamic data, for example in a table or list, the table rows or li's need to be identified by the key property.
 Simply by:
 ```javascript
-* <tr key={author.id}>
-* <li key={course.id}>
+<tr key={author.id}>
+<li key={course.id}>
 ```
 
 ##Displaying Arrays of Data##
