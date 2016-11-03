@@ -20,10 +20,10 @@ React component have 4 different cycles, depending on what's happening to the co
 -componentDidMount, after rendering the component can be manipulated by the DOM.
 
 ####State Changes:####
--shouldComponentUpdate
--componentWillUpdate
--Render
--componentDidUpdate
+* shouldComponentUpdate
+* componentWillUpdate
+* Render
+* componentDidUpdate
 
 ####Props Changes:####
 -componentWillReceiveProps
@@ -38,8 +38,8 @@ React component have 4 different cycles, depending on what's happening to the co
 ##Dynamic Data##
 When manipulating dynamic data, for example in a table or list, the table rows or li's need to be identified by the key property.
 Simply by:
-<tr key={author.id}>
-<li key={course.if}>
+//<tr key={author.id}>
+//<li key={course.id}>
 
 ##Displaying Arrays of Data##
 To iterate over an array of information, use the map method, where it's possible to access each object information.
