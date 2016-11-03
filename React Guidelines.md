@@ -46,11 +46,11 @@ Simply by:
 ##Displaying Arrays of Data##
 To iterate over an array of information, use the map method, where it's possible to access each object information.
 ```javascript
-{this.props.profileObject.courses.map(  
-  item => (<tr className="clickable-row" data-href="/CourseDetails" key={item.id} >  
-            <td>{ item.name }</td>  
-            <td>{ item.grade }</td>  
-          </tr>)  
-  )  
-}  
+this.state.courses.map(function(course) {
+		        return (<tr key={course.id} >
+                      <td>{course.name}</td>
+                      <td>
+                        <Link to={'/Courses/CourseDetails/' + course.id } className="link-details">See Details</Link>
+                      </td>
+                    </tr>) 
 ```
