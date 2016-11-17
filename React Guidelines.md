@@ -79,3 +79,6 @@ var App = React.createClass({
 	}
 });
 ```
+
+##Tools
+-React Developer Tools(Chrome Extension)
