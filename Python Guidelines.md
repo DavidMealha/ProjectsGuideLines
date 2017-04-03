@@ -1,6 +1,6 @@
-#Python Guidelines#
+# Python Guidelines #
 
-##String Concatenation##
+## String Concatenation ##
 ```python
 phrase = "This first string is boring"
 new_phrase = ""
@@ -19,7 +19,7 @@ print new_phrase
 #if the other way is used, we will have an array of chars, so we need to join them to make a string
 #print ''.join(nova_frase)
 ```
-##Defining a class##
+## Defining a class ##
 ```python
 class Car:
     #class constructor, called when creating a new object
@@ -33,7 +33,7 @@ class Car:
         return self.horsepower > 200
 ```
 
-##Object Instanciation/Creation##
+## Object Instanciation/Creation ##
 ```python
 object = Car('Porsche', '911', 2017, 510)
 ```
