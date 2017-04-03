@@ -1,26 +1,26 @@
-#ASP.NET MVC Guidelines#
+# ASP.NET MVC Guidelines #
 
-##Database First##
+## Database First ##
 
-##Code First##
+## Code First ##
 
-##Controllers##
+## Controllers ##
 
-##Models##
+## Models ##
 
-##Views##
-To define Views in ASP.NET MVC it's used a templating language called Razor, this way the views will not be decoupled from the server, leading to a higher relation between Client and Server.
+## Views ##
+To define Views in ASP.NET MVC it's used a templating language called Razor, this way the views will not be decoupled from the server, leading to a higher relation(dependability) between Client and Server.
 
-##ViewModels##
+## ViewModels ##
 
-##Authentication##
+## Authentication ##
 Use Custom Authentication, with the use of FormsAuthentication that sets a cookie
 
-##Deploy to a Windows Web Server##
+## Deploy to a Windows Web Server ##
 
-####Using Web Deploy####
+#### Using Web Deploy ####
 
-####Files and Folders Exclusions####
+#### Files and Folders Exclusions ####
 
-####Pages loading slowly?####
+#### Pages loading slowly? ####
 That's due to the Roslyn compiler.
