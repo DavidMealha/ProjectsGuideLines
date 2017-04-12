@@ -1,2 +1,2 @@
 # ProjectsGuideLines
-The guidelines I follow for each project, depending on the language
+Guidelines for different languagens, C#, JS, Python, etc..
