@@ -13,6 +13,27 @@ Until ES5 there was only the reserve word `var`, since then, from ES6+ there's a
 
 #### Using a function ####
 
+```javascript
+function Car (model, year) {
+    this.model = model;
+    this.year = year;
+}
+ 
+Apple.prototype.getInfo = function() {
+    return 'My ' + this.model + ' is from ' + this.year;
+};
+```
+
 #### Using object properties ####
+
+```javascript
+var car = {
+    model: 'Ferrari',
+    year: 2017,
+    getInfo: function () {
+    	return 'My ' + this.model + ' is from ' + this.year;
+	}
+}
+```
 
 ### ES6 ###
