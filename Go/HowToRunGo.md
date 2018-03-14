@@ -100,15 +100,8 @@ go get -u github.com/FiloSottile/gvt
 gvt restore
 
 cd $GOPATH/src/github.com/microservices-demo/catalogue/cmd/cataloguesvc/
-go build -o catalogue
+go build -o ./app/catalogue
 ```
 
-* At this time, it is possible to see the binary/application in the same folder.
-
-```shell
-ls
-
-RESULT:
-
-catalogue main.go
-```
+* At this time, it is possible to see the binary/application in the same folder. 
+* __Although it is not necessary to compile the go program in your OS, it helps understanding how it works and find some bugs that may occur__
