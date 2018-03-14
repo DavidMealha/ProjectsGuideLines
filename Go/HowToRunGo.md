@@ -18,12 +18,15 @@ sudo mv go $HOME
 ```
 
 Set **GOPATH** and **GOBIN** paths.
+In this language all projects must be in the **same workspace** (folder), which means the GOPATH. 
+In this example I set the workspace as $HOME/go-projects and then we have GOROOT with the files of the programming language.
 
 ```shell
 sudo nano ~/.profile
 ```
 
-Add to the end of the file the following line. I choose to locate my go folder in $HOME but could be anywhere, like /usr/local.
+Add the following lines to the end of the file. 
+I chose to locate my go (GOROOT) folder in $HOME but could be anywhere, like /usr/local.
 
 ```shell
 export GOROOT=$HOME/go
