@@ -75,10 +75,10 @@ docker run NAME_OF_MY_AWESOME_IMAGE
 git clone https://github.com/DavidMealha/front-end
 ```
 
-* Build the image into your machine (you must be located in the folder of the Dockerfile).
+* Build the image into your machine (you must be located in the folder of the Dockerfile). The last dot is to define the path of the Dodckerfile.
 
 ```shell
-docker build -t front-end-v0.1
+docker build -t front-end-v0.1 .
 
 RESULT:
 
@@ -93,7 +93,7 @@ front-end-v0.1      latest              a9af6adc25b8        42 hours ago        
 docker run -d -p 8080:8079 front-end-v0.1
 ```
 
-* To verify the running containers use the ps command. It is possible to list all the containers creating by adding the follow flag (-a).
+* To verify the running containers use the **ps** command. It is possible to list all the containers creating by adding the follow flag (-a).
 
 ```shell
 docker ps
@@ -112,7 +112,7 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 3f79bef2bf95        ubuntu              "/bin/bash"              4 days ago          Exited (0) 4 days ago                            compassionate_lumiere
 ```
 
-* You can start or stop a container whenever you want by defining the container id.
+* You can **start or stop** a container whenever you want by defining the container id.
 
 ```shell
 docker start 41e9a6f0c85a
@@ -120,10 +120,13 @@ docker start 41e9a6f0c85a
 docker stop 41e9a6f0c85a
 ```
 
-* To free some space you can remove Docker images (rmi) or containers (rm). It is not possible to remove an image that has associated containers (either running or stopped).
+* To free some space you can **remove** Docker images (rmi) or containers (rm). It is not possible to remove an image that has associated containers (either running or stopped).
 
 ```shell
 docker rm 41e9a6f0c85a
 
 docker rmi a9af6adc25b8
 ```
+
+## Run catalogue service and database
+

@@ -83,4 +83,32 @@ go install github.com/DavidMealha/hello
 $GOBIN/bin/hello
 ```
 
-## Run go services with gvt 
+## Build catalogue service
+
+* The first step is to have the git repository into golang workspace. 
+* This command will automatically clone the repository.
+
+```shell
+go get -u github.com/DavidMealha/catalogue
+```
+
+* Then, it is necessary to remove the tracing tools from the code and solve some errors. Check the commits from March 13th and 14th regarding.
+* After that just follow the instructions in the repository README. The first two will install a vendor tool to download dependencies.
+
+```shell
+go get -u github.com/FiloSottile/gvt
+gvt restore
+
+cd $GOPATH/src/github.com/microservices-demo/catalogue/cmd/cataloguesvc/
+go build -o catalogue
+```
+
+* At this time, it is possible to see the binary/application in the same folder.
+
+```shell
+ls
+
+RESULT:
+
+catalogue main.go
+```
