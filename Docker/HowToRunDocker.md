@@ -163,7 +163,30 @@ docker build -t catalogue-v0.1 -f ./docker/catalogue/Dockerfile .
 ### Runing with docker-compose
 
 The docker-compose of this service is defined to build and run both services.
-In the root of the project run the following command. After a few minutes the containers will be running.
+After a few minutes the containers will be running.
+
+```shell
+docker-compose build
+docker-compose run
+```
+
+## Run user service and database
+
+Get the repository from GitHub, this one has some changes compared to the original version. This is due to the errors caused by the integration of monitoring and tracing tools.
+
+```shell
+go get -u github.com/DavidMealha/user
+```
+
+### Using docker-compose
+
+First we build the images by installing go and its dependencies on the service image. In the database image the mongodb is installed.
+
+```shell
+docker-compose build
+```
+
+After building the images are ready to be used. The up command will start the conntainers.
 
 ```shell
 docker-compose up
