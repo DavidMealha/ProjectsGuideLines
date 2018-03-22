@@ -82,3 +82,105 @@ rs0:SECONDARY> rs.slaveOk()
 rs0:SECONDARY> db.customers.find({})
 
 ```
+
+### Adding a new replica to an existing replica set
+
+Run a new mongodb container with a new external port.
+
+```shell
+docker run -p 27020:27017 --name user-db-third-replica --net my-mongo-cluster user-db-v0.1 mongod --replSet rs0 --config /etc/mongodb.conf --smallfiles
+```
+
+Verify your existing replica set members by connecting to the mongo shell of the primary replica.
+
+```shell
+docker exec -it user-db-first-replica mongo
+rs0:PRIMARY> rs.conf()
+
+RESULT:
+
+{
+	"_id" : "rs0",
+	"version" : 1,
+	"protocolVersion" : NumberLong(1),
+	"members" : [
+		{
+			"_id" : 0,
+			"host" : "user-db-first-replica:27017",
+			"arbiterOnly" : false,
+			"buildIndexes" : true,
+			"hidden" : false,
+			"priority" : 1,
+			"tags" : {
+				
+			},
+			"slaveDelay" : NumberLong(0),
+			"votes" : 1
+		},
+		{
+			"_id" : 1,
+			"host" : "user-db-second-replica:27017",
+			"arbiterOnly" : false,
+			"buildIndexes" : true,
+			"hidden" : false,
+			"priority" : 1,
+			"tags" : {
+				
+			},
+			"slaveDelay" : NumberLong(0),
+			"votes" : 1
+		}
+	],
+	"settings" : {
+		"chainingAllowed" : true,
+		"heartbeatIntervalMillis" : 2000,
+		"heartbeatTimeoutSecs" : 10,
+		"electionTimeoutMillis" : 10000,
+		"catchUpTimeoutMillis" : -1,
+		"catchUpTakeoverDelayMillis" : 30000,
+		"getLastErrorModes" : {
+			
+		},
+		"getLastErrorDefaults" : {
+			"w" : 1,
+			"wtimeout" : 0
+		},
+		"replicaSetId" : ObjectId("5aaf131fb1c20d3e73c2f68c")
+	}
+}
+
+```
+
+After ensuring the new replica is running seamlessly, it's time to add the instance to the replica set.
+
+```shell
+rs0:PRIMARY> rs.add("user-db-third-replica:27017")
+rs0:PRIMARY> rs.conf()
+
+RESULT:
+
+{
+	"_id" : "rs0",
+	"version" : 2,
+	
+	... 
+
+		{
+			"_id" : 2,
+			"host" : "user-db-third-replica:27017",
+			"arbiterOnly" : false,
+			"buildIndexes" : true,
+			"hidden" : false,
+			"priority" : 1,
+			"tags" : {
+				
+			},
+			"slaveDelay" : NumberLong(0),
+			"votes" : 1
+		}
+
+	...
+}
+
+
+```

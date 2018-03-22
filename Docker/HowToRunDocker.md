@@ -40,7 +40,7 @@ Go into the folder root of the project
 Run the following command, it will build the new image with the dependencies set in the Dockerfile.
 
 ```shell
-docker build -t NAME_OF_MY_AWESOME_IMAGE
+docker build -t NAME_OF_MY_AWESOME_IMAGE .
 ```
 
 In order to verify your images use the command:
