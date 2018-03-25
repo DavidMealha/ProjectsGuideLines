@@ -184,3 +184,17 @@ RESULT:
 
 
 ```
+
+### Running stream handler
+
+Go to project root where the Dockerfile is.
+
+```shell
+docker build -t mongo-stream-handler .
+```
+
+Run in the same network as the mongo instances.
+
+```shell
+docker run -d --net my-mongo-cluster mongo-stream-handler
+```

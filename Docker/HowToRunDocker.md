@@ -67,6 +67,14 @@ It's possible to install via apt'get install.
 apt-get install docker-compose
 ```
 
+## Imposing restart always on existing container
+
+```shell
+docker update --restart=always <container>
+```
+
+
+
 
 ## Run frontend service
 
