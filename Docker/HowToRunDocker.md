@@ -73,9 +73,6 @@ apt-get install docker-compose
 docker update --restart=always <container>
 ```
 
-
-
-
 ## Run frontend service
 
 This service is one of the most simple, since it isn't attached to a database.

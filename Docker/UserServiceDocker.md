@@ -198,3 +198,18 @@ Run in the same network as the mongo instances.
 ```shell
 docker run -d --net my-mongo-cluster mongo-stream-handler
 ```
+
+### Adding an Edge replica
+
+This replica will be in a separate replica set.
+
+```shell
+docker run -p 27021:27017 --name user-db-edge-replica --net my-mongo-cluster user-db-v0.1 mongod --replSet rsEdge --config /etc/mongodb.conf --smallfiles
+```
+
+This needs to be inside a replica set to work with mongo change streams.
+
+```shell
+config = { "_id" : "rsEdge", "members" : [{ "_id" : 0, "host" : "user-db-edge-replica:27017" }]}
+rs.initiate(config)
+```
