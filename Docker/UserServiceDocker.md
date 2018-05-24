@@ -6,6 +6,12 @@ Get the repository from GitHub, this one has some changes compared to the origin
 go get -u github.com/DavidMealha/user
 ```
 
+## Using docker run 
+
+```shell
+docker run -d -p 8080:8080 --net my-mongo-cluster --restart=always --name=user-service user-service
+```
+
 ## Using docker-compose
 
 First we build the images by installing go and its dependencies on the service image. In the database image the mongodb is installed.
