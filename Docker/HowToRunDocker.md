@@ -19,6 +19,16 @@ sudo apt-get install docker-ce
 sudo docker --version
 ```
 
+## Instal Docker-compose
+
+This procedure is necessary to install the latest release that supports version 3.
+
+```shell
+curl -L https://github.com/docker/compose/releases/download/1.22.0/docker-compose-`uname -s`-`uname -m` -o /usr/bin/docker-compose
+chmod +x /usr/bin/docker-compose
+docker-compose -v
+```
+
 ## Add the application code to your machine
 
 Fork all repositories from microservices-demo in the GitHub website.
